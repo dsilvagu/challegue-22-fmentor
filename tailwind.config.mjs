@@ -17,11 +17,11 @@ export default {
 		},
 		
 		backgroundImage: {
-			"menu-open": "url('../src/images/icon-menu.svg')",
-			"menu-close": "url('../src/images/icon-menu-close.svg')",
+			"menu-open": "url('/src/assets/images/icon-menu.svg')",
+			"menu-close": "url('/src/assets/images/icon-menu-close.svg')",
 
-			"hero-desktop": "url('../src/images/image-web-3-desktop.jpg')",
-			"hero-mobile": "url('../src/images/image-web-3-mobile.jpg')",
+			"hero-desktop": "url('/src/assets/images/image-web-3-desktop.jpg')",
+			"hero-mobile": "url('/src/assets/images/image-web-3-mobile.jpg')",
 		}
 	},
 	plugins: [],
