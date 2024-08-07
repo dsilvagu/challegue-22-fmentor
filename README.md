@@ -5,6 +5,17 @@
 
 ## Componentes
 
+```text
+/
+├── cards/
+│   └── FooterCard.astro
+├── components/
+│   └── Aside.astro
+│   └── Footer.astro
+│   └── Header.astro
+│   └── Hero.astro
+```
+
 ```
 <body class="font-finter w-[90%] mx-auto max-w-screen-xl py-10 grid gap-10 md:grid-cols-3">
 		<Header 
