@@ -1,0 +1,22 @@
+---
+interface Props {
+    title: string,
+    text: string,
+    button: string
+}
+
+const {title, text, button} = Astro.props;
+---
+
+<section class="md:col-start-1 md:col-end-3 md:row-start-2">
+    <div class="h-96 bg-hero-mobile bg-cover bg-center sm:bg-hero-desktop "></div>
+    <article class="grid gap-6 mt-12 md:grid-cols-2  md:gap-8">
+        <h1 class="text-5xl font-extrabold text-pbdblue md:col-start-1 md:self-center md:text-6xl md:row-start-1 md:row-end-3">{title}</h1>
+        
+        <p class="text-base text-pdgblue md:col-start-2 md:row-start-1">{text}</p>
+
+        <a class="inline-block bg-psred text-poffwhite py-3 px-8 justify-self-start self-start md:col-start-2 md:row-start-2" href="#">{button}</a>
+    </article>
+</section>
+
+

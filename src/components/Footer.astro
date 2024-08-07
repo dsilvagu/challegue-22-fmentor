@@ -1,0 +1,29 @@
+---
+import FooterCard from "../cards/FooterCard.astro";
+import img1 from "../images/image-gaming-growth.jpg";
+import img2 from "../images/image-retro-pcs.jpg";
+import img3 from "../images/image-top-laptops.jpg";
+---
+
+<footer class="flex flex-col gap-8 max-w-md md:flex-row md:row-start-3 md:col-span-full md:max-w-none">
+    <FooterCard
+        img={img2.src}
+        title="01"
+        title2="Reviving Retro PCs"
+        text="What happens when old PCs are given modern upgrades?"
+    />
+
+    <FooterCard
+        img={img3.src}
+        title="02"
+        title2="Top 10 Laptops of 2022"
+        text="Our best picks for various needs and budgets."
+    />
+
+    <FooterCard
+        img={img1.src}
+        title="03"
+        title2="The Growth of Gaming"
+        text="How the pandemic has sparked fresh opportunities."
+    />
+</footer>

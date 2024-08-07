@@ -1,0 +1,59 @@
+---
+import img1 from '../images/logo.svg';
+
+interface Props {
+    nav1: string,
+    nav2: string,
+    nav3: string,
+    nav4: string,
+    nav5: string
+}
+
+const {nav1,nav2,nav3,nav4,nav5} = Astro.props;
+---
+<header class="md:col-span-full">
+    <nav class="flex items-center justify-between">
+        <img src={img1.src} alt="">
+        <div class="bg-menu-open w-6 h-6 bg-no-repeat bg-center relative cursor-pointer transition-all z-10 md:hidden" id="icon"></div>
+
+        <section class="fixed inset-0 bg-pbdblue/20 opacity-0 pointer-events-none transition-all md:pointer-events-auto md:relative md:bg-[transparent] md:opacity-100" id="menu">
+            <ul class="w-3/4 bg-poffwhite h-full absolute right-0 top-0 grid content-center gap-4 pl-6 md:relative md:grid-flow-col md:w-max md:pl-0 md:gap-8">
+                <li><a class="hover:text-psred transition duration-500" href="#">{nav1}</a></li>
+                <li><a class="hover:text-psred transition duration-500" href="#">{nav2}</a></li>
+                <li><a class="hover:text-psred transition duration-500" href="#">{nav3}</a></li>
+                <li><a class="hover:text-psred transition duration-500" href="#">{nav4}</a></li>
+                <li><a class="hover:text-psred transition duration-500" href="#">{nav5}</a></li>
+            </ul>        
+        </section>
+    </nav>
+</header>
+
+<script is:inline>
+    const iconMenu = document.querySelector("#icon");
+    const menu = document.querySelector("#menu");
+
+    const menuStates = {
+        open: "bg-menu-open",
+        close: "bg-menu-close"
+    };
+
+    iconMenu.addEventListener('click', function(){
+        if(iconMenu.classList.contains(menuStates["open"])){
+            iconMenu.classList.remove(menuStates["open"]);
+            iconMenu.classList.add(menuStates["close"]);
+            menu.classList.remove('opacity-0','pointer-events-none');
+        }
+        else{
+            iconMenu.classList.remove(menuStates["close"]);
+            iconMenu.classList.add(menuStates["open"]);
+            menu.classList.add('opacity-0','pointer-events-none');
+        }
+    });
+
+    window.addEventListener('resize', function(){
+        iconMenu.classList.remove(menuStates["close"]);
+            iconMenu.classList.add(menuStates["open"]);
+            menu.classList.add('opacity-0','pointer-events-none');
+    });
+</script>
+

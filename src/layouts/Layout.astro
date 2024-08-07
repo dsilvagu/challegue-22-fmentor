@@ -1,0 +1,33 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="font-finter w-[90%] mx-auto max-w-screen-xl py-10 grid gap-10 md:grid-cols-3">
+		<Header 
+			nav1='Home'
+			nav2='New'
+			nav3='Popular'
+			nav4='Trending'
+			nav5='Categories'
+		/>
+		<slot />
+
+		<Footer />
+	</body>
+</html>
